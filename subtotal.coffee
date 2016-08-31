@@ -380,6 +380,7 @@ callWithJQuery ($) ->
             h = rowHeaderRows[r]
             if h.clickStatus is "collapsed"
                 return
+            h.tr.classList.remove("expanded");
             rowspan = 0
             for i in [1..h.descendants] when h.descendants != 0
                 d = rowHeaderRows[r+i]
@@ -416,6 +417,7 @@ callWithJQuery ($) ->
             h = rowHeaderRows[r]
             if h.clickStatus is "expanded"
                 return
+            h.tr.classList.add("expanded");
             rowspan = 0
             for ch in h.children
                 rowspan = rowspan + ch.th.rowSpan

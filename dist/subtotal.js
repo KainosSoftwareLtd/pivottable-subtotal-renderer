@@ -607,6 +607,7 @@
         if (h.clickStatus === "collapsed") {
           return;
         }
+        h.tr.classList.remove("expanded");
         rowspan = 0;
         for (i = k = 1, ref = h.descendants; 1 <= ref ? k <= ref : k >= ref; i = 1 <= ref ? ++k : --k) {
           if (!(h.descendants !== 0)) {
@@ -665,6 +666,7 @@
         if (h.clickStatus === "expanded") {
           return;
         }
+        h.tr.classList.add("expanded");
         rowspan = 0;
         ref = h.children;
         for (k = 0, len = ref.length; k < len; k++) {
