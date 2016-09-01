@@ -608,6 +608,7 @@
           return;
         }
         h.tr.classList.remove("expanded");
+        $(h.tr.children[1]).contents().last().replaceWith("");
         rowspan = 0;
         for (i = k = 1, ref = h.descendants; 1 <= ref ? k <= ref : k >= ref; i = 1 <= ref ? ++k : --k) {
           if (!(h.descendants !== 0)) {
@@ -667,6 +668,7 @@
           return;
         }
         h.tr.classList.add("expanded");
+        $(h.tr.children[1]).append("Total");
         rowspan = 0;
         ref = h.children;
         for (k = 0, len = ref.length; k < len; k++) {
