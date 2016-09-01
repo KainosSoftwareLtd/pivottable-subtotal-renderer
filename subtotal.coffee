@@ -381,6 +381,7 @@ callWithJQuery ($) ->
             if h.clickStatus is "collapsed"
                 return
             h.tr.classList.remove("expanded");
+            $(h.tr.children[1]).contents().last().replaceWith("");
             rowspan = 0
             for i in [1..h.descendants] when h.descendants != 0
                 d = rowHeaderRows[r+i]
@@ -418,6 +419,7 @@ callWithJQuery ($) ->
             if h.clickStatus is "expanded"
                 return
             h.tr.classList.add("expanded");
+            $(h.tr.children[1]).append("Total");
             rowspan = 0
             for ch in h.children
                 rowspan = rowspan + ch.th.rowSpan
